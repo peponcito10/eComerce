@@ -6,19 +6,108 @@
   <title>Document</title>
 </head>
 <body>
-  <div class="container my-4">
+  <div class=" my-4 p-3">
 <h2 class="mb-4">Selecciona una categoría:</h2>
 
 
-<select id="selectCategory" class="form-select" aria-label="Default select example">
+
+      <div class=" text-center">
+  <div class="row g-0 text-center">
+
+<!-- FILTROS -->
+    <div class=" col-md-12 col-lg-12 col-xl-3 p-3 border-end">
+       <div class="row">
+        
+      <div class=" ms-auto my-4">
+        <form class="d-flex" >
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="in_search">
+        <button class="btn btn-outline-success" onclick="buscarProducto(event)">Search</button>
+        </form>
+      </div>
+
+      <div class="p-3">
+        <select id="selectCategory" class="form-select" aria-label="Default select example">
   <option value="0" selected>Todas las categorias</option>
-
 </select>
+      </div>
 
 
-<div class="container my-4">
+    </div>
+  </div>
+
+<!-- CONTENIDO -->
+    <div class="container col-xl-9">
+     <div class="my-4">
   <div id="productos" class="row g-3"></div>
 </div>
+    </div>
+</div>
+
+
+
+<div class="modal fade" id="vistaRapidaModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+           <div class="modal-dialog modal-dialog-centered modal-lg">
+               <div class="modal-content">
+
+
+                <div class="modal-header">
+                        <div class="d-flex gap-3">
+                            <h3 class="modal-title fs-5" id="producto-nombre">Modal title</h3>
+                            <div id="modal-header-und" class="align-content-center"></div>
+                        </div>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                            aria-label="Close">
+                        </button>
+                   </div>
+
+                <div class="modal-body" id="modal-body">
+                        <div class="container-fluid">
+                            <div class="row">
+                              <div class="col-md-7 p-3 " style="max-height: 400px; box-sizing: content-box; object-fit: contain; background-position: center ; background-size: contain; overflow: hidden;">
+                                <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                                    <div class="carousel-inner" id="carouselProducto">
+                                       
+                                    </div>
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
+                                    </div>
+
+
+                              </div>
+                              <div class="col-md-5 ms-auto">
+                                <div class="row">
+                                    <!-- .col-md-5 .ms-auto -->
+                                </div>
+                                <div class="row">
+
+                                </div>
+                                <div class="row">
+                                    <div class="input-group" style="max-width: 200px;">
+                                        <button class="btn btn-outline-secondary" type="button" onclick="decrement()">−</button>
+                                        <input type="number" class="form-control text-center" id="cantidad" value="1" min="1">
+                                        <button class="btn btn-outline-secondary" type="button" onclick="increment()">+</button>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                   </div>
+                   <div class="modal-footer">
+                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                       <button id="buy-button" type="button" class="btn btn-primary ">Comprar</button>
+                   </div>
+
+
+               </div>
+           </div>
+       </div>
 
 
 <script type="module" src="./producto.js"></script>
