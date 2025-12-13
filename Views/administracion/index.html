@@ -1,0 +1,39 @@
+
+<div class="container-xl mt-3">
+
+    <div class="container d-flex gap-3 flex-column flex-sm-row my-4" >
+ <form class="d-flex gap-1" id="form-search">
+                <input class="form-control" type="text" id="in_search" placeholder="Buscar...">
+                <button class="btn btn-outline-success" type="submit">Buscar</button>
+              </form>
+
+  <select class="form-select" id="selectCategory">
+                <option value="">Todas las categorías</option>
+              </select>
+
+    </div>
+
+
+     <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Descripcion</th>
+      <th scope="col">Categoria</th>
+      <th scope="col">Precio</th>
+    </tr>
+  </thead>
+  <tbody id="trsTable" >
+   
+
+  </tbody>
+</table>
+
+
+            <div id="pagination" class="mt-4"></div>
+
+</div>
+
+<script type="module" src="./index.js"></script>
+
