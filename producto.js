@@ -15,6 +15,9 @@ const state = {
 };
 
 
+
+
+
 const userData = JSON.parse(localStorage.getItem("userData"))
 
 // Getters públicos
@@ -61,8 +64,16 @@ const renderProductos = async() => {
     }
   });
 
+  
+  document.addEventListener("click", async (e) => {
+    if (e.target.closest(".btnReseñar")) {
+      const boton = e.target.closest(".btnReseñar");
+      console.log(boton.dataset);    
+      const nombre = boton.dataset.bsNombre;
+     window.location.replace(`/product/Views/opiniones/add?nombre=${nombre}`);
 
-
+    }
+  });
 
     categoriaSelect.addEventListener("change", (e) => {
       e.preventDefault();
@@ -120,6 +131,12 @@ export function createProductCards(productos) {
             </p>
             <div class="mt-auto">
               <p class="fw-bold fs-5 text-primary mb-2">${precio}</p>
+
+
+              <button class="btnReseñar btn btn-primary my-2"   
+               data-bs-nombre="${producto.nombre}">Reseñar producto
+               </button>
+
               <button 
                 
                 type="button" 

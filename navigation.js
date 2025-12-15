@@ -59,16 +59,27 @@ document.getElementById("item-producto").addEventListener("click", () => {
       import("./producto.js").then((m) => m.initProducto());
     });
 });
-// document.getElementById("item-admin").addEventListener("click", () => {
-//   fetch("./Views/administracion/index.html")
-//     .then((r) => r.text())
-//     .then((html) => {
-//       mainContent.innerHTML = html;
+// Opiniones
+document.getElementById("item-opiniones").addEventListener("click", () => {
+  fetch("./Views/opiniones/index.html")
+    .then((r) => r.text())
+    .then((html) => {
+      mainContent.innerHTML = html;
 
-//       // carga el JS como módulo e inicializa
-//       import("./Views/administracion/index.js").then((m) => m.initAdmin());
-//     });
-// });
+      // carga el JS como módulo e inicializa
+      import("./Views/opiniones/index.js").then((m) => m.initProducto());
+    });
+});
+document.getElementById("item-admin").addEventListener("click", () => {
+  fetch("./Views/administracion/index.html")
+    .then((r) => r.text())
+    .then((html) => {
+      mainContent.innerHTML = html;
+
+      // carga el JS como módulo e inicializa
+      import("./Views/administracion/index.js").then((m) => m.initAdmin());
+    });
+});
 
 // Shop
 document.getElementById("item-shop").addEventListener("click", () => {
